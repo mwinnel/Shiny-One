@@ -6,7 +6,7 @@ shinyUI(navbarPage("Linkage!",
                             sidebarLayout(
                               sidebarPanel(
                                 radioButtons("Parameters", "Parameters",
-                                             c("pH"="p", "Temprature"="l","Conductivity"="p", "Turbidity"="l", "Dual-Sensor"="p")
+                                             c("pH"="p", "TempA"="l", "TempC"="p", "Cond"="p", "TurbA"="l", "TurbS"="p", "Dual-Sensor"="p")
                                 )
                               ),
                               mainPanel(
