@@ -5,8 +5,8 @@ shinyUI(navbarPage("Linkage!",
                    tabPanel("Plot",
                             sidebarLayout(
                               sidebarPanel(
-                                radioButtons("plotType", "Plot type",
-                                             c("Scatter"="p", "Line"="l")
+                                radioButtons("Parameters", "Parameters",
+                                             c("pH"="p", "Temprature"="l","Conductivity"="p", "Turbidity"="l", "Dual-Sensor"="p")
                                 )
                               ),
                               mainPanel(
@@ -29,9 +29,7 @@ shinyUI(navbarPage("Linkage!",
                               ),
                               tabPanel("About",
                                        fluidRow(
-                                         column(6,
-                                                includeMarkdown("about.md")
-                                         )
+                                         
                                          
                                        )
                               )

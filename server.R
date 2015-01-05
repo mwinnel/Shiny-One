@@ -2,7 +2,7 @@ library(shiny)
 
 shinyServer(function(input, output, session) {
   output$plot <- renderPlot({
-    plot(cars, type=input$plotType)
+    plot(cars, type=input$Parameters)
   })
   
   output$summary <- renderPrint({
