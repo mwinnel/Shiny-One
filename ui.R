@@ -5,9 +5,12 @@ shinyUI(navbarPage("Linkage!",
                    tabPanel("Plot",
                             sidebarLayout(
                               sidebarPanel(
-                                radioButtons("Parameters", "Parameters",
-                                             c("pH"="p", "TempA"="l", "TempC"="p", "Cond"="p", "TurbA"="l", "TurbS"="p", "Dual-Sensor"="p")
-                                )
+                                #radioButtons("Parameters", "Parameters",
+                                #             c("pH"="p", "TempA"="l", "TempC"="p", "Cond"="p", "TurbA"="l", "TurbS"="p", "Dual-Sensor"="p")
+                                #)
+                                checkboxGroupInput("Parameters", label = h3("Parameters"), 
+                                                   choices = list("pH" = "pH", "TempA" = "TempA", "TempC" = "TempC", "Cond" = "Cond", "TurbA" = "TurbA", "TurbS" = "TurbS", "Dual-Sensor" = "Dual"),
+                                                   selected = "pH")
                               ),
                               mainPanel(
                                 plotOutput("plot")
