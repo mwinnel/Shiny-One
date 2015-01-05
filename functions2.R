@@ -742,6 +742,19 @@ plotting <- function(data_set_2, varCol, alarms, period.to.show, current_pos, PO
   LabelTimeAxis()
 }
 
+################################################################################
+#       simple plot function used for web
+#
+################################################################################
+s_plot <- function(data_set_2) {       
+  
+  plot(data_set_2[, 4], data_set_2[, 3], 
+       xlim = c(data_set_2[1,4], data_set_2[dim(data_set_2)[1],4]), 
+       axes = FALSE, pch=20, cex=.5, xlab="", ylab = "test", type = "l")
+  axis(2)
+  LabelTimeAxis()
+}
+
 
 ################################################################################
 #       alerts.pH
