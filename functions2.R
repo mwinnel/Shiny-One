@@ -746,16 +746,38 @@ plotting <- function(data_set_2, varCol, alarms, period.to.show, current_pos, PO
 #       simple plot function used for web
 #
 ################################################################################
-s_plot <- function(data_set_2) {       
+s_plot <- function(data_set_1, data_set_2, label1, label2) {       
+  
+  par(mfrow=c(1,2))
+  plot(data_set_1[, 4], data_set_1[, 3], 
+       xlim = c(data_set_1[1,4], data_set_1[dim(data_set_1)[1],4]), 
+       axes = FALSE, pch=20, cex=.5, xlab="", ylab = label1, type = "l")
+  box()
+  axis(2)
+  LabelTimeAxis()
   
   plot(data_set_2[, 4], data_set_2[, 3], 
        xlim = c(data_set_2[1,4], data_set_2[dim(data_set_2)[1],4]), 
-       axes = FALSE, pch=20, cex=.5, xlab="", ylab = "test", type = "l")
+       axes = FALSE, pch=20, cex=.5, xlab="", ylab = label2, type = "l")
   box()
   axis(2)
   LabelTimeAxis()
 }
 
+################################################################################
+#       dual plot function used for web
+#
+################################################################################
+d_plot <- function(data_set_1, data_set_2, label) {       
+  
+  plot(data_set_1[, 4], data_set_1[, 3], 
+       xlim = c(data_set_1[1,4], data_set_1[dim(data_set_1)[1],4]), 
+       axes = FALSE, pch=20, cex=.5, xlab="", ylab = label, type = "l")
+  lines(data_set_2[,4],data_set_2[,3], type="l", xlab="",cex=.5, col="red")
+  box()
+  axis(2)
+  LabelTimeAxis()
+}
 
 ################################################################################
 #       alerts.pH
