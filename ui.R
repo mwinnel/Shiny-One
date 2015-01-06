@@ -2,20 +2,49 @@ library(shiny)
 library(markdown)
 ###
 shinyUI(navbarPage("Linkage!",
-                   tabPanel("Plot",
-                            sidebarLayout(
-                              sidebarPanel(
-                                #radioButtons("Parameters", "Parameters",
-                                #             c("pH"="p", "TempA"="l", "TempC"="p", "Cond"="p", "TurbA"="l", "TurbS"="p", "Dual-Sensor"="p")
-                                #)
-                                checkboxGroupInput("Parameters", label = h3("Parameters"), 
-                                                   choices = list("pH" = "pH", "TempA" = "TempA", "TempC" = "TempC", "Cond" = "Cond", "TurbA" = "TurbA", "TurbS" = "TurbS", "Dual-Sensor" = "Dual"),
-                                                   selected = "pH")
-                              ),
-                              mainPanel(
-                                plotOutput("plot")
+                  tabPanel("Plot",       
+                      fluidRow(
+                              column(12,
+                                checkboxGroupInput("Parameters", label = h3("Real Time Plotting"), 
+                                choices = list("Dual-Sensor" = "Dual"),selected = "")
                               )
-                            )
+                            ),
+                      fluidRow(
+                        column(12,
+                               wellPanel(plotOutput("plotpH"))
+                        )
+                      ),
+                      fluidRow(
+                        column(12,
+                               wellPanel(plotOutput("plotTempC"))
+                        )
+                      ),
+                      fluidRow(
+                        column(12,
+                               wellPanel(plotOutput("plotCond"))
+                        )
+                      ),
+                      fluidRow(
+                        column(12,
+                               wellPanel(plotOutput("plotTurbA"))
+                        )
+                      ),
+                      fluidRow(
+                        column(12,
+                               wellPanel(plotOutput("plotTurbS"))
+                        )
+                      )
+                              
+                              
+
+                                #plotOutput("plotpH"),
+                                #plotOutput("plotTempA"),
+                                #plotOutput("plotTempC"),
+                                #plotOutput("plotCond"),
+                                #plotOutput("plotTurbA"),
+                                #plotOutput("plotTurbS")   
+                              
+                            
                    ),
                    tabPanel("History",
                             verbatimTextOutput("history")
