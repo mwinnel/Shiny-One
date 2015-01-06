@@ -6,7 +6,10 @@ shinyUI(navbarPage("Linkage!",
                       fluidRow(
                               column(12,
                                 checkboxGroupInput("Parameters", label = h3("Real Time Plotting"), 
-                                choices = list("Dual-Sensor" = "Dual"),selected = "")
+                                choices = list("Dual-Sensor" = "Dual"),selected = ""),
+                                selectInput("select", label = h3(""), 
+                                            choices = list("10 Seconds" = 10000, "30 Seconds" = 30000, "60 Seconds" = 60000), 
+                                            selected = 10000)
                               )
                             ),
                       fluidRow(
