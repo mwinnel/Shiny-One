@@ -32,57 +32,57 @@ shinyServer(
     eval(parse(text=temp))
 
     Cond1 <- reactive({
-      Cond <- reactiveFileReader(as.numeric(input$select), session, "data/dataset_Cond1.csv", read.csv)
+      Cond <- reactiveFileReader(as.numeric(input$select), session, paste("data/",input$node,"/dataset_Cond1.csv",sep =""), read.csv)
       Cond1 <- Cond()
       })
     
     Cond2 <- reactive({
-      Cond <- reactiveFileReader(as.numeric(input$select), session, "data/dataset_Cond2.csv", read.csv)
+      Cond <- reactiveFileReader(as.numeric(input$select), session, paste("data/",input$node,"/dataset_Cond2.csv",sep =""), read.csv)
       Cond2 <- Cond()
     })
     
     pH1 <- reactive({
-      pH <- reactiveFileReader(as.numeric(input$select), session, "data/dataset_pH1.csv", read.csv)
+      pH <- reactiveFileReader(as.numeric(input$select), session, paste("data/",input$node,"/dataset_pH1.csv",sep =""), read.csv)
       pH1 <- pH()
     })
     
     pH2 <- reactive({
-      pH <- reactiveFileReader(as.numeric(input$select), session, "data/dataset_pH2.csv", read.csv)
+      pH <- reactiveFileReader(as.numeric(input$select), session, paste("data/",input$node,"/dataset_pH2.csv",sep =""), read.csv)
       pH2 <- pH()
     })
     
     TempC1 <- reactive({
-      TempC <- reactiveFileReader(as.numeric(input$select), session, "data/dataset_TempC1.csv", read.csv)
+      TempC <- reactiveFileReader(as.numeric(input$select), session, paste("data/",input$node,"/dataset_TempC1.csv",sep =""), read.csv)
       TempC1 <- TempC()
     })
     
     TempC2 <- reactive({
-      TempC <- reactiveFileReader(as.numeric(input$select), session, "data/dataset_TempC2.csv", read.csv)
+      TempC <- reactiveFileReader(as.numeric(input$select), session, paste("data/",input$node,"/dataset_TempC2.csv",sep =""), read.csv)
       TempC2 <- TempC()
     })
     
     TurbA1 <- reactive({
-      TurbA <- reactiveFileReader(as.numeric(input$select), session, "data/dataset_TurbA1.csv", read.csv)
+      TurbA <- reactiveFileReader(as.numeric(input$select), session, paste("data/",input$node,"/dataset_TurbA1.csv",sep =""), read.csv)
       TurbA1 <- TurbA()
     })
     
     TurbA2 <- reactive({
-      TurbA <- reactiveFileReader(as.numeric(input$select), session, "data/dataset_TurbA2.csv", read.csv)
+      TurbA <- reactiveFileReader(as.numeric(input$select), session, paste("data/",input$node,"/dataset_TurbA2.csv",sep =""), read.csv)
       TurbA2 <- TurbA()
     })
     
     TurbS1 <- reactive({
-      TurbS <- reactiveFileReader(as.numeric(input$select), session, "data/dataset_TurbS1.csv", read.csv)
+      TurbS <- reactiveFileReader(as.numeric(input$select), session, paste("data/",input$node,"/dataset_TurbS1.csv",sep =""), read.csv)
       TurbS1 <- TurbS()
     })
     
     TurbS2 <- reactive({
-      TurbS <- reactiveFileReader(as.numeric(input$select), session, "data/dataset_TurbS2.csv", read.csv)
+      TurbS <- reactiveFileReader(as.numeric(input$select), session, paste("data/",input$node,"/dataset_TurbS2.csv",sep =""), read.csv)
       TurbS2 <- TurbS()
     })
     
     TempA1 <- reactive({
-      TempA <- reactiveFileReader(as.numeric(input$select), session, "data/dataset_TempA1.csv", read.csv)
+      TempA <- reactiveFileReader(as.numeric(input$select), session, paste("data/",input$node,"/dataset_TempA1.csv",sep =""), read.csv)
       TempA1 <- TempA()
     })
     
