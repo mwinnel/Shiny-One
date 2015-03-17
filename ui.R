@@ -10,7 +10,10 @@ shinyUI(navbarPage("Linkage!",
                                                          choices = list("Dual-Sensor" = "Dual"),selected = ""),
                                       selectInput("select", label = h3(""), 
                                                   choices = list("10 Seconds" = 10000, "30 Seconds" = 30000, "60 Seconds" = 60000), 
-                                                  selected = 10000)#)
+                                                  selected = 10000),
+                                      selectInput("node", label = h3("Node Selected"), 
+                                                  choices = nodeList, 
+                                                  selected = 1)#)
                                ),
                              mainPanel(
                                fluidRow(
